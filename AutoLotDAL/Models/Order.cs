@@ -1,9 +1,9 @@
+using AutoLotDAL.Models.Base;
+
 namespace AutoLotConsoleApp.EF
 {
-    public partial class Order
+    public partial class Order : EntityBase
     {
-        public int OrderId { get; set; }
-
         public int CustId { get; set; }
 
         public int CarId { get; set; }

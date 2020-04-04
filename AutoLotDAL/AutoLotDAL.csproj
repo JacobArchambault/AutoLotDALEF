@@ -47,7 +47,12 @@
     <Compile Include="Migrations\202004041951582_Initial.designer.cs">
       <DependentUpon>202004041951582_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004042048390_AddBaseId.cs" />
+    <Compile Include="Migrations\202004042048390_AddBaseId.designer.cs">
+      <DependentUpon>202004042048390_AddBaseId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Base\EntityBase.cs" />
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\InventoryPartial.cs" />
     <Compile Include="Models\CreditRisk.cs" />
@@ -71,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202004041951582_Initial.resx">
       <DependentUpon>202004041951582_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004042048390_AddBaseId.resx">
+      <DependentUpon>202004042048390_AddBaseId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

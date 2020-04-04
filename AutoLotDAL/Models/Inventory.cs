@@ -1,20 +1,18 @@
 namespace AutoLotConsoleApp.EF
 {
+    using AutoLotDAL.Models.Base;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Inventory")]
-    public partial class Inventory
+    public partial class Inventory : EntityBase
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Inventory()
         {
             Orders = new HashSet<Order>();
         }
-
-        [Key]
-        public int CarId { get; set; }
 
         [StringLength(50)]
         public string Make { get; set; }

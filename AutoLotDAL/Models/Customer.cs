@@ -1,14 +1,12 @@
 namespace AutoLotConsoleApp.EF
 {
+    using AutoLotDAL.Models.Base;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public partial class Customer
+    public partial class Customer : EntityBase 
     {
-        [Key]
-        public int CustId { get; set; }
-
         [StringLength(50)]
         public string FirstName { get; set; }
 
