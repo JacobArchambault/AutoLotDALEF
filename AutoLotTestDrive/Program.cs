@@ -1,11 +1,7 @@
 ﻿using AutoLotConsoleApp.EF;
 using AutoLotDAL.EF;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutoLotTestDrive
 {
@@ -13,7 +9,7 @@ namespace AutoLotTestDrive
     {
         static void Main()
         {
-            Database.SetInitializer(new MyDataInitializer());
+            //Database.SetInitializer(new MyDataInitializer());
 
             Console.WriteLine("***** Fun with ADO.NET EF Code First *****\n");
 
