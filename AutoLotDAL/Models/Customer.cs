@@ -2,6 +2,7 @@ namespace AutoLotConsoleApp.EF
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public partial class Customer
     {
@@ -16,6 +17,8 @@ namespace AutoLotConsoleApp.EF
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; } = new HashSet<Order>();
+        [NotMapped]
+        public string FullName => FirstName + " " + LastName;
 
     }
 }
