@@ -5,7 +5,7 @@ using System.Data.Entity.Migrations;
 
 namespace AutoLotDAL.EF
 {
-    class MyDataInitializer : DropCreateDatabaseAlways<AutoLotEntities>
+    public class MyDataInitializer : DropCreateDatabaseAlways<AutoLotEntities>
     {
         protected override void Seed(AutoLotEntities context)
         {
