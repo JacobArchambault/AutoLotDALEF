@@ -43,6 +43,10 @@
   <ItemGroup>
     <Compile Include="EF\AutoLotEntities.cs" />
     <Compile Include="EF\MyDataInitializer.cs" />
+    <Compile Include="Migrations\202004041951582_Initial.cs" />
+    <Compile Include="Migrations\202004041951582_Initial.designer.cs">
+      <DependentUpon>202004041951582_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\InventoryPartial.cs" />
@@ -63,6 +67,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202004041951582_Initial.resx">
+      <DependentUpon>202004041951582_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
