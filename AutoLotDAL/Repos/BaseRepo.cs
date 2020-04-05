@@ -64,11 +64,9 @@ namespace AutoLotDAL.Repos
         {
             throw new NotImplementedException();
         }
+        public T GetOne(int? id) => _table.Find(id);
 
-        public List<T> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+        public virtual List<T> GetAll() => _table.ToList();
 
         public List<T> ExecuteQuery(string sql)
         {
