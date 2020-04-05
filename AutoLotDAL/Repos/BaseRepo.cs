@@ -68,15 +68,9 @@ namespace AutoLotDAL.Repos
 
         public virtual List<T> GetAll() => _table.ToList();
 
-        public List<T> ExecuteQuery(string sql)
-        {
-            throw new NotImplementedException();
-        }
+        public List<T> ExecuteQuery(string sql) => _table.SqlQuery(sql).ToList();
 
-        public List<T> ExecuteQuery(string sql, object[] sqlParametersObjects)
-        {
-            throw new NotImplementedException();
-        }
+        public List<T> ExecuteQuery(string sql, object[] sqlParametersObjects) => _table.SqlQuery(sql, sqlParametersObjects).ToList();
         #endregion
     }
 }
