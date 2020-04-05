@@ -3,6 +3,7 @@ using AutoLotDAL.Models.Base;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,19 @@ namespace AutoLotDAL.Repos
         public int Save(T entity)
         {
             throw new NotImplementedException();
+        }
+        internal int SaveChanges()
+        {
+            try
+            {
+                return _db.SaveChanges();
+            }
+            catch (Exception ex) when (ex is DbUpdateConcurrencyException || ex is CommitFailedException)
+            {
+                // Thrown when there is a concurrency error or a transaction failure
+                Console.WriteLine("Something went wrong: " + ex.Message);
+                throw;
+            }
         }
 
         public int Delete(int id, byte[] timeStamp)
