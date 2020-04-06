@@ -29,12 +29,14 @@ namespace AutoLotDAL.Repos
         }
         public int Add(T entity)
         {
-            throw new NotImplementedException();
+            _table.Add(entity);
+            return SaveChanges();
         }
 
         public int AddRange(IList<T> entities)
         {
-            throw new NotImplementedException();
+            _table.AddRange(entities);
+            return SaveChanges();
         }
 
         public int Save(T entity)
