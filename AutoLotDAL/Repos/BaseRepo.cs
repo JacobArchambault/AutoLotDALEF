@@ -41,7 +41,8 @@ namespace AutoLotDAL.Repos
 
         public int Save(T entity)
         {
-            throw new NotImplementedException();
+            _db.Entry(entity).State = EntityState.Modified;
+            return SaveChanges();
         }
         internal int SaveChanges()
         {
