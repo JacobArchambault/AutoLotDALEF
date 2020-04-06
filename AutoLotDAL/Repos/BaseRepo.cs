@@ -60,12 +60,14 @@ namespace AutoLotDAL.Repos
 
         public int Delete(int id, byte[] timeStamp)
         {
-            throw new NotImplementedException();
+            _db.Entry(new T() { Id = id, TimeStamp = timeStamp }).State = EntityState.Deleted;
+            return SaveChanges();
         }
 
         public int Delete(T entity)
         {
-            throw new NotImplementedException();
+            _db.Entry(entity).State = EntityState.Deleted;
+            return SaveChanges();
         }
         public T GetOne(int? id) => _table.Find(id);
 
