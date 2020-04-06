@@ -1,12 +1,14 @@
 namespace AutoLotConsoleApp.EF
 {
     using System.Data.Entity;
-
+    using System.Data.Entity.Infrastructure.Interception;
+    using AutoLotDAL.Interception;
     public partial class AutoLotEntities : DbContext
     {
         public AutoLotEntities()
             : base("name=AutoLotConnection")
         {
+            DbInterception.Add(new ConsoleWriterInterceptor());
         }
 
         public virtual DbSet<CreditRisk> CreditRisks { get; set; }

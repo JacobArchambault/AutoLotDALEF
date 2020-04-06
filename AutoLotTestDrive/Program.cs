@@ -1,8 +1,6 @@
 ﻿using AutoLotConsoleApp.EF;
-using AutoLotDAL.EF;
 using AutoLotDAL.Repos;
 using System;
-using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 

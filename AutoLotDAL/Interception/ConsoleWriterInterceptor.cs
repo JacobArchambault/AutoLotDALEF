@@ -9,7 +9,7 @@ using static System.Console;
 
 namespace AutoLotDAL.Interception
 {
-    class ConsoleWriterInterceptor : IDbCommandInterceptor
+    public class ConsoleWriterInterceptor : IDbCommandInterceptor
     {
         private void WriteInfo(bool isAsync, string commandText)
         {
@@ -18,32 +18,32 @@ namespace AutoLotDAL.Interception
 
         public void NonQueryExecuted(DbCommand command, DbCommandInterceptionContext<int> interceptionContext)
         {
-            throw new NotImplementedException();
+            WriteInfo(interceptionContext.IsAsync, command.CommandText);
         }
 
         public void NonQueryExecuting(DbCommand command, DbCommandInterceptionContext<int> interceptionContext)
         {
-
+            WriteInfo(interceptionContext.IsAsync, command.CommandText);
         }
 
         public void ReaderExecuted(DbCommand command, DbCommandInterceptionContext<DbDataReader> interceptionContext)
         {
-            throw new NotImplementedException();
+            WriteInfo(interceptionContext.IsAsync, command.CommandText);
         }
 
         public void ReaderExecuting(DbCommand command, DbCommandInterceptionContext<DbDataReader> interceptionContext)
         {
-            throw new NotImplementedException();
+            WriteInfo(interceptionContext.IsAsync, command.CommandText);
         }
 
         public void ScalarExecuted(DbCommand command, DbCommandInterceptionContext<object> interceptionContext)
         {
-            throw new NotImplementedException();
+            WriteInfo(interceptionContext.IsAsync, command.CommandText);
         }
 
         public void ScalarExecuting(DbCommand command, DbCommandInterceptionContext<object> interceptionContext)
         {
-            throw new NotImplementedException();
+            WriteInfo(interceptionContext.IsAsync, command.CommandText);
         }
     }
 }
