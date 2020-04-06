@@ -23,10 +23,11 @@ namespace AutoLotDAL.Repos
 
         #region IDisposable Support
 
-        protected void Dispose()
+        public void Dispose()
         {
             _db?.Dispose();
         }
+        #endregion
         public int Add(T entity)
         {
             _table.Add(entity);
@@ -76,6 +77,6 @@ namespace AutoLotDAL.Repos
         public List<T> ExecuteQuery(string sql) => _table.SqlQuery(sql).ToList();
 
         public List<T> ExecuteQuery(string sql, object[] sqlParametersObjects) => _table.SqlQuery(sql, sqlParametersObjects).ToList();
-        #endregion
+
     }
 }

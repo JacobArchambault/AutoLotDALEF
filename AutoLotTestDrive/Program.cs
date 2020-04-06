@@ -1,5 +1,6 @@
 ﻿using AutoLotConsoleApp.EF;
 using AutoLotDAL.EF;
+using AutoLotDAL.Repos;
 using System;
 using System.Data.Entity;
 
@@ -12,10 +13,10 @@ namespace AutoLotTestDrive
             //Database.SetInitializer(new MyDataInitializer());
 
             Console.WriteLine("***** Fun with ADO.NET EF Code First *****\n");
-
-            using (var context = new AutoLotEntities())
+            Console.WriteLine("***** Using a Repository *****\n");
+            using (var repo = new InventoryRepo())
             {
-                foreach (Inventory c in context.Inventory)
+                foreach (Inventory c in repo.GetAll())
                 {
                     Console.WriteLine(c);
                 }

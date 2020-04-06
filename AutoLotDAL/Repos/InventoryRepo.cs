@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AutoLotDAL.Repos
 {
-    class InventoryRepo : BaseRepo<Inventory>
+    public class InventoryRepo : BaseRepo<Inventory>
     {
         public override List<Inventory> GetAll() => Context.Inventory.OrderBy(x => x.PetName).ToList();
     }
