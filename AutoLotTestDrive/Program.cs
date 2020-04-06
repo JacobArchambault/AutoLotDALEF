@@ -42,5 +42,19 @@ namespace AutoLotTestDrive
                 repo.Save(carToUpdate);
             }
         }
+        private static void RemoveRecordByCar(Inventory carToDelete)
+        {
+            using (var repo = new InventoryRepo())
+            {
+                repo.Delete(carToDelete);
+            }
+        }
+        private static void RemoveRecordById(int carId, byte[] timeStamp)
+        {
+            using (var repo = new InventoryRepo())
+            {
+                repo.Delete(carId, timeStamp);
+            }
+        }
     }
 }
