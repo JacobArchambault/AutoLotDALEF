@@ -31,6 +31,16 @@ namespace AutoLotTestDrive
                 repo.Add(car);
             }
         }
-
+        private static void UpdateRecord(int carId)
+        {
+            using (var repo = new InventoryRepo())
+            {
+                // Grab the car, change it, save.
+                var carToUpdate = repo.GetOne(carId);
+                if (carToUpdate == null) return;
+                carToUpdate.Color = "Blue";
+                repo.Save(carToUpdate);
+            }
+        }
     }
 }
