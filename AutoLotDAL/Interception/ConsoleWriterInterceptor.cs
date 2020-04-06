@@ -5,11 +5,17 @@ using System.Data.Entity.Infrastructure.Interception;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace AutoLotDAL.Interception
 {
     class ConsoleWriterInterceptor : IDbCommandInterceptor
     {
+        private void WriteInfo(bool isAsync, string commandText)
+        {
+            WriteLine($"IsAsync: {isAsync}, Command Text: {commandText}");
+        }
+
         public void NonQueryExecuted(DbCommand command, DbCommandInterceptionContext<int> interceptionContext)
         {
             throw new NotImplementedException();
