@@ -23,5 +23,14 @@ namespace AutoLotTestDrive
             }
             Console.ReadLine();
         }
+        private static void AddNewRecord(Inventory car)
+        {
+            // Add record to the Inventory table of the AutoLot database.
+            using (var repo = new InventoryRepo())
+            {
+                repo.Add(car);
+            }
+        }
+
     }
 }
