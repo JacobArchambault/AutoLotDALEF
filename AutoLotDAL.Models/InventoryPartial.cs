@@ -1,7 +1,7 @@
 ﻿using AutoLotDAL.Models.Base;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AutoLotConsoleApp.EF
+namespace AutoLotDal.Models
 {
     public partial class Inventory : EntityBase
     {

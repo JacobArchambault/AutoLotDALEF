@@ -1,4 +1,5 @@
 ﻿using AutoLotConsoleApp.EF;
+using AutoLotDal.Models;
 using AutoLotDAL.Repos;
 using System;
 using System.Data.Entity.Infrastructure;

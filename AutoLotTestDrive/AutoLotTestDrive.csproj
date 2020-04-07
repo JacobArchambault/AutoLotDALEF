@@ -60,6 +60,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AutoLotDAL.Models\AutoLotDAL.Models.csproj">
+      <Project>{2E11798C-C940-4DEA-B00E-9411E5B1ABB5}</Project>
+      <Name>AutoLotDAL.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AutoLotDAL\AutoLotDAL.csproj">
       <Project>{B6B5FA29-4008-49E5-9ADF-80387F41C8CD}</Project>
       <Name>AutoLotDAL</Name>

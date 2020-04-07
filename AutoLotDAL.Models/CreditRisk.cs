@@ -1,4 +1,4 @@
-namespace AutoLotConsoleApp.EF
+namespace AutoLotDal.Models
 {
     using AutoLotDAL.Models.Base;
     using System.ComponentModel.DataAnnotations;

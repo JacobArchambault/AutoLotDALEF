@@ -6,6 +6,7 @@ namespace AutoLotConsoleApp.EF
     using AutoLotDAL.Interception;
     using System.Data.Entity.Core.Objects;
     using System;
+    using AutoLotDal.Models;
 
     public partial class AutoLotEntities : DbContext
     {

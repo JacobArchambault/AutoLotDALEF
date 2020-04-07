@@ -1,6 +1,6 @@
 using AutoLotDAL.Models.Base;
 
-namespace AutoLotConsoleApp.EF
+namespace AutoLotDal.Models
 {
     public partial class Order : EntityBase
     {
