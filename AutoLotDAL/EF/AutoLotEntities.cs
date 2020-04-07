@@ -5,11 +5,21 @@ namespace AutoLotConsoleApp.EF
     using AutoLotDAL.Interception;
     public partial class AutoLotEntities : DbContext
     {
+        static readonly DatabaseLogger DatabaseLogger = new DatabaseLogger("sqllog.txt", true);
         public AutoLotEntities()
             : base("name=AutoLotConnection")
         {
-            DbInterception.Add(new ConsoleWriterInterceptor());
+            //DbInterception.Add(new ConsoleWriterInterceptor());
+            DatabaseLogger.StartLogging();
+            DbInterception.Add(DatabaseLogger);
         }
+        protected override void Dispose(bool disposing)
+        {
+            DbInterception.Remove(DatabaseLogger);
+            DatabaseLogger.StopLogging();
+            base.Dispose(disposing);
+        }
+
 
         public virtual DbSet<CreditRisk> CreditRisks { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
