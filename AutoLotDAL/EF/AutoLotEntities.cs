@@ -18,14 +18,13 @@ namespace AutoLotConsoleApp.EF
 
         public AutoLotEntities() : base("name=AutoLotConnection")
         {
-            // Interceptor code
+            //DbInterception.Add(new ConsoleWriterInterceptor());
+            DatabaseLogger.StartLogging();
+            DbInterception.Add(DatabaseLogger);
             var context = (this as IObjectContextAdapter).ObjectContext;
             context.ObjectMaterialized += OnObjectMaterialized;
             context.SavingChanges += OnSavingChanges;
 
-            //DbInterception.Add(new ConsoleWriterInterceptor());
-            DatabaseLogger.StartLogging();
-            DbInterception.Add(DatabaseLogger);
         }
         protected override void Dispose(bool disposing)
         {
