@@ -1,11 +1,11 @@
 ﻿namespace AutoLotDAL.Migrations
 {
-    using AutoLotConsoleApp.EF;
+    using AutoLotDAL.EF;
     using AutoLotDal.Models;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<AutoLotConsoleApp.EF.AutoLotEntities>
+    internal sealed class Configuration : DbMigrationsConfiguration<AutoLotDAL.EF.AutoLotEntities>
     {
         public Configuration()
         {

@@ -1,12 +1,11 @@
-namespace AutoLotConsoleApp.EF
+namespace AutoLotDAL.EF
 {
+    using AutoLotDal.Models;
+    using System;
     using System.Data.Entity;
+    using System.Data.Entity.Core.Objects;
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Infrastructure.Interception;
-    using AutoLotDAL.Interception;
-    using System.Data.Entity.Core.Objects;
-    using System;
-    using AutoLotDal.Models;
 
     public partial class AutoLotEntities : DbContext
     {
