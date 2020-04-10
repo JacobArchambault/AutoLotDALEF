@@ -9,8 +9,6 @@ namespace AutoLotDAL.EF
 
     public partial class AutoLotEntities : DbContext
     {
-        static readonly DatabaseLogger DatabaseLogger = new DatabaseLogger("sqllog.txt", true);
-
         public virtual DbSet<CreditRisk> CreditRisks { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Inventory> Inventory { get; set; }
@@ -18,17 +16,9 @@ namespace AutoLotDAL.EF
 
         public AutoLotEntities() : base("name=AutoLotConnection")
         {
-            //DbInterception.Add(new ConsoleWriterInterceptor());
-            DatabaseLogger.StartLogging();
-            DbInterception.Add(DatabaseLogger);
-            var context = (this as IObjectContextAdapter).ObjectContext;
-            context.ObjectMaterialized += OnObjectMaterialized;
-            context.SavingChanges += OnSavingChanges;
         }
         protected override void Dispose(bool disposing)
         {
-            DbInterception.Remove(DatabaseLogger);
-            DatabaseLogger.StopLogging();
             base.Dispose(disposing);
         }
 
