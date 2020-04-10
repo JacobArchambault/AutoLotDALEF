@@ -18,7 +18,6 @@ namespace AutoLotDAL.EF
 
         public AutoLotEntities() : base("name=AutoLotConnection")
         {
-            //DbInterception.Add(new ConsoleWriterInterceptor());
             DatabaseLogger.StartLogging();
             DbInterception.Add(DatabaseLogger);
             var context = (this as IObjectContextAdapter).ObjectContext;
