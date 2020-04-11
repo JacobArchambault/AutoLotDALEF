@@ -1,6 +1,6 @@
 namespace AutoLotDAL.EF
 {
-    using AutoLotDal.Models;
+    using AutoLotDAL.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Core.Objects;

@@ -1,7 +1,7 @@
 ﻿namespace AutoLotDAL.Migrations
 {
     using AutoLotDAL.EF;
-    using AutoLotDal.Models;
+    using AutoLotDAL.Models;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
 
